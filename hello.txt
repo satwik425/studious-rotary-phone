@@ -1,0 +1,41 @@
+ Vector2 pos={0,0};
+    Vector2 direction={1,1};
+    int shipspeed=100;
+
+
+     if(pos.x>=1600-112){
+        direction.x=-1;
+       }
+        if(pos.y>=900-75){
+        direction.y=-1;
+       }
+        if(pos.x<=0){
+        direction.x=1;
+       }
+         if(pos.y<=0){
+        direction.y=1;
+       }
+       float dt =GetFrameTime();
+
+        pos.x+=direction.x*shipspeed*dt;
+         pos.y+=direction.y*shipspeed*dt;
+
+
+
+
+         if(IsKeyDown(KEY_S)){
+        direction.y=1;
+      }
+      else{
+        direction.y=0;
+      }
+
+
+
+
+        if(IsKeyDown(KEY_A)){
+        direction.x=-1;
+      }
+      else{
+        direction.x=0;
+      }
